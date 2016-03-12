@@ -1,13 +1,10 @@
 class Grains
-  def self.square(num)
-    2**(num-1)
+  def self.square(number)
+    2**(number-1)
   end
 
   def self.total
-    total = 0
-    for i in 1..64
-      total += square(i)
-    end
-    total
+    squares = 1.upto(64)
+    squares.inject{|sum, num| sum += square(num)}
   end
 end
